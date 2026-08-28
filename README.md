@@ -11,8 +11,13 @@
 ./apply.sh shef       # только шеф и бригада
 ```
 
-Пишет `spinnerVerbs` в `~/.claude/settings.json`, старый файл сохраняет в
-`settings.json.bak.<дата>`. Перезапуск не нужен — подхватится на следующем ходу.
+`apply.sh` пишет ключ `spinnerVerbs` в `~/.claude/settings.json`, старый файл
+сохраняет рядом как `settings.json.bak.<дата>`. Перезапускать Claude Code не
+нужно — настройка подхватится на следующем ходу.
+
+Нужен Claude Code **2.1.23 или новее** (`claude --version`) — в более старых
+версиях ключа `spinnerVerbs` ещё нет, и он просто игнорируется: спиннер
+останется со стандартными «Diggling…».
 
 ```bash
 ./apply.sh --show     # что стоит сейчас
